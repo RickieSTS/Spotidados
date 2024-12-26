@@ -4,10 +4,15 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid2";
+<<<<<<< Updated upstream
 import { styled } from "@mui/material/styles";
 import { G2 } from "./Components/g2/g2";
 import { TextareaAutosize } from "@mui/material";
 import { spacing } from '@mui/system';
+=======
+import MyCard from './Components/g1/g1.jsx';
+import MinutesCount from "./Components/g4/g4.jsx";
+>>>>>>> Stashed changes
 
 function App() {
   return (
@@ -15,6 +20,7 @@ function App() {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="xxl">
+<<<<<<< Updated upstream
           <Box sx={{ bgcolor: "#cfe8fc", height: "100vh", m: 1}}>
             <Grid
               sx={{ border: "black solid 5px" }}
@@ -78,6 +84,26 @@ function App() {
                 3
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 12 }}>
+=======
+          <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }}>
+            <Grid container spacing={2} columns={16}>
+            <Grid item xs={4}>
+            <MinutesCount />
+            </Grid>
+              <Grid xs={16}>
+                <MyCard />
+              </Grid>
+              <Grid xs={6} md={8}>
+                1
+              </Grid>
+              <Grid xs={6} md={8}>
+                2
+              </Grid>
+              <Grid xs={6} md={4}>
+                3
+              </Grid>
+              <Grid xs={6} md={8}>
+>>>>>>> Stashed changes
                 4
               </Grid>
             </Grid>

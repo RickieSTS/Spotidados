@@ -26,7 +26,7 @@ export default function NestedList() {
       aria-labelledby="nested-list-subheader"
       subheader={
         <ListSubheader component="div" id="nested-list-subheader">
-          Nested List Items shara
+          Nested List Items
         </ListSubheader>
       }
     >

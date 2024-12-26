@@ -1,6 +1,6 @@
 import { Card, CardContent, Typography } from '@mui/material';
 
-function PlayCount() {
+function MinutesCount() {
  return (
    <Card sx={{ 
      bgcolor: '#424242',
@@ -11,14 +11,14 @@ function PlayCount() {
    }}>
      <CardContent>
        <Typography variant="h5" gutterBottom>
-         Total de Plays
+         Total de Minutos
        </Typography>
        <Typography variant="h4">
-         Plays: 1500
+         Min: 14440
        </Typography>
      </CardContent>
    </Card>
  );
 }
 
-export default PlayCount;
+export default MinutesCount;
