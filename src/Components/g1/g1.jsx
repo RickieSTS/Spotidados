@@ -1,6 +1,11 @@
 import { Card, CardContent, Typography } from '@mui/material';
+//G1) Ver quantas plays no total.
 
+<<<<<<< HEAD
 function G1() {
+=======
+function PlayCount({dados}) {
+>>>>>>> 16a0c700399162791e29da775c9ebab68ae072c9
  return (
    <Card sx={{ 
     bgcolor: '#666666', 
@@ -16,6 +21,7 @@ function G1() {
        </Typography>
        <Typography variant="h4">
          Plays: 1500
+         Plays: {dados.length}
        </Typography>
      </CardContent>
    </Card>
