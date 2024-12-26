@@ -4,10 +4,10 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid2";
-import { G2 } from "./Components/g2/g2";
-import MyCard from './Components/g1/g1.jsx';
-import MinutesCount from "./Components/g4/g4.jsx";
-
+import  G2 from "./Components/g2/g2";
+import G1 from './Components/g1/g1.jsx';
+import G4 from './Components/g4/g4.jsx';
+import G11 from './Components/g11/g11.jsx';
 
 function App() {
   return (
@@ -70,17 +70,18 @@ function App() {
                 
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 8 }}>
-              <MinutesCount />
+              <G11/>
+              </Grid>
+              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 8 }}>
+              <G4 />
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 8 }}>
                 <G2/>
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 4 }}>
-              <MyCard />
+              <G1/>
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 12 }}>
-
-      
                 4
               </Grid>
             </Grid>

@@ -5,5 +5,7 @@ export function G2() {
 
   return <>
   {count.size}
+  
   </>;
 }
+export default G2;

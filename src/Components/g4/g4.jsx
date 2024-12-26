@@ -1,13 +1,14 @@
 import { Card, CardContent, Typography } from '@mui/material';
 
-function MinutesCount() {
+function G4() {
  return (
    <Card sx={{ 
-     bgcolor: '#424242',
-     borderRadius: '15px',
-     color: 'white',
-     minWidth: 200,
-     margin: 2
+    bgcolor: '#666666', 
+    border: '2px solid #808080', 
+    borderRadius: '15px',
+    color: 'white',
+    minWidth: 200,
+    margin: 2
    }}>
      <CardContent>
        <Typography variant="h5" gutterBottom>
@@ -21,4 +22,4 @@ function MinutesCount() {
  );
 }
 
-export default MinutesCount;
+export default G4;
