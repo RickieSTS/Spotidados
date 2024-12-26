@@ -81,7 +81,7 @@ function App() {
 
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 12 }}>
-                4
+                5
               </Grid>
             </Grid>
           </Box>
