@@ -1,13 +1,13 @@
 import { Card, CardContent, Typography } from '@mui/material';
 //G4) Ver quantos minutos já se passou a ouvir.
-function MinutesCount({dados}) {
 
-<<<<<<< HEAD
+
+
 function G4() {
-=======
+
     const totalMillisegundos = dados.reduce((acc, cur)=> acc+=cur.ms_played, 0)
     const totalMinutos = Math.round(totalMillisegundos/1000)
->>>>>>> 16a0c700399162791e29da775c9ebab68ae072c9
+
  return (
    <Card sx={{ 
     bgcolor: '#666666', 
