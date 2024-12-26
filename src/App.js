@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid2";
 import { G2 } from "./Components/g2/g2";
 import MyCard from './Components/g1/g1.jsx';
 import MinutesCount from "./Components/g4/g4.jsx";
-
+import data from "../src/spotify_data_history.json";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
             >
               <Grid sx={{ border: "black solid 5px", display:"flex",  alignItems: 'center' }} size={{ xs: 16 }}>
                
-                 <box>
+                 <Box>
                    <svg 
                   width="90"
                   height="90"
@@ -60,23 +60,25 @@ function App() {
                     </linearGradient>
                   </defs>
                 </svg>
-                 </box>
+                 </Box>
                
 
-                <box>
+                <Box>
                   <span sx={{display: "flex"}}> O meu histórico do Spotify</span>
-                </box>
+                </Box>
                  
                 
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 8 }}>
-              <MinutesCount />
+              <MinutesCount dados={data}/>
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 8 }}>
-                <G2/>
+
+                <G2 dados={data}/>
+
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 4 }}>
-              <MyCard />
+              <MyCard dados={data}/>
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 6, md: 12 }}>
 
