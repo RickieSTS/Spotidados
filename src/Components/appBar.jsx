@@ -8,12 +8,12 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
+
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar() {
@@ -37,14 +37,49 @@ function NavBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xxl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Box sx={{mr:2,}}>
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 90 90"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0H45C69.8528 0 90 20.1472 90 45C90 69.8528 69.8528 90 45 90C20.1472 90 0 69.8528 0 45V0Z"
+                      fill="url(#paint0_linear_1_13)"
+                    />
+                    <path
+                      d="M25.5005 61.5001L41.0004 30.5001L55.5 54.0001L64 40.0002L77.4997 54.0001"
+                      stroke="white"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="74.5" cy="29.5" r="5.5" fill="#005246" />
+                    <ellipse cx="42" cy="77.5" rx="3" ry="2.5" fill="#CD88FF" />
+                    <circle cx="26" cy="39" r="10" fill="#5B21B6" />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_1_13"
+                        x1="45"
+                        y1="0"
+                        x2="45"
+                        y2="90"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#005246" />
+                        <stop offset="1" stop-color="#5B21B6" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </Box>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="#index"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -55,7 +90,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Spotidados
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -85,14 +120,10 @@ function NavBar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                </MenuItem>
-              ))}
+              
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          
           <Typography
             variant="h5"
             noWrap
@@ -109,18 +140,10 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Spotidados
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
