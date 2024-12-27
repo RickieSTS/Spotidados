@@ -12,7 +12,7 @@ function G1({dados}) {
     borderRadius: '15px',
     color: 'white',
     minWidth: 200,
-    margin: 2
+    margin: 20
    }}>
      <CardContent>
        <Typography variant="h6" gutterBottom>
