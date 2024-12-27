@@ -1,4 +1,4 @@
-function G3({dados}) {
+function ArtistasDiferentesOuvidosT({dados}) {
     //G3) Ver quantos artistas diferentes já foram ouvidos no total.
       const count = new Set(dados.map((e)=>(e.master_metadata_album_artist_name)));
         
@@ -10,4 +10,4 @@ function G3({dados}) {
       
       </>;
     }
-    export default G3;
+    export default ArtistasDiferentesOuvidosT;
