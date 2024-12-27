@@ -15,10 +15,10 @@ function G1({dados}) {
     margin: 2
    }}>
      <CardContent>
-       <Typography variant="h5" gutterBottom>
+       <Typography variant="h6" gutterBottom>
          Total de Plays
        </Typography>
-       <Typography variant="h4">
+       <Typography variant="h5">
          
          Plays: {dados.length}
        </Typography>
