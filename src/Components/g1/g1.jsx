@@ -2,7 +2,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 //G1) Ver quantas plays no total.
 
 
-function G1() {
+function G1({dados}) {
 
 
  return (
@@ -19,7 +19,7 @@ function G1() {
          Total de Plays
        </Typography>
        <Typography variant="h4">
-         Plays: 1500
+         
          Plays: {dados.length}
        </Typography>
      </CardContent>
