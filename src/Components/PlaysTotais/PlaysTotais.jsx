@@ -2,7 +2,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 //G1) Ver quantas plays no total.
 
 
-function G1({dados}) {
+function PlaysTotais({dados}) {
 
 
  return (
@@ -27,4 +27,4 @@ function G1({dados}) {
  );
 }
 
-export default G1;
+export default PlaysTotais;

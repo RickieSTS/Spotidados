@@ -5,10 +5,10 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid2";
 
-import G2 from "./Components/g2/g2";
-import G3 from "./Components/g3/g3";
-import G1 from "./Components/g1/g1.jsx";
-import G4 from "./Components/g4/g4.jsx";
+import MusicasDiferentesOuvidasT from "./Components/MusicasDiferentesOuvidasT/MusicasDiferentesOuvidasT.jsx";
+import ArtistasDiferentesOuvidosT from "./Components/ArtistasDiferentesOuvidosT/ArtistasDiferentesOuvidosT.jsx";
+import PlaysTotais from "./Components/PlaysTotais/PlaysTotais.jsx";
+import G4 from "./Components/MinutosPassados/MinutosPassados.jsx";
 import G11 from "./Components/g11/g11.jsx";
 import data from "../src/spotify_data_history.json";
 import NavBar from "../src/Components/appBar.jsx";
@@ -46,13 +46,13 @@ function App() {
                 </Box>
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <G1 dados={data} />
+                <PlaysTotais dados={data} />
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <G2 dados={data} />
+                <MusicasDiferentesOuvidasT dados={data} />
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <G3 dados={data} />
+                <ArtistasDiferentesOuvidosT dados={data} />
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
                 <G4 dados={data} />
