@@ -2,7 +2,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 //G1) Ver quantas plays no total.
 
 
-function G1({dados}) {
+function PlaysTotais({dados}) {
 
 
  return (
@@ -12,7 +12,7 @@ function G1({dados}) {
     borderRadius: '15px',
     color: 'white',
     minWidth: 200,
-    margin: 2
+    margin: 20
    }}>
      <CardContent>
        <Typography variant="h6" gutterBottom>
@@ -27,4 +27,4 @@ function G1({dados}) {
  );
 }
 
-export default G1;
+export default PlaysTotais;

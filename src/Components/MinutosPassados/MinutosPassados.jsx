@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 
 
 
-function G4({dados}) {
+function ArtistasDiferentesOuvidosT({dados}) {
 
     const totalMillisegundos = dados.reduce((acc, cur)=> acc+=cur.ms_played, 0)
     const totalMinutos = Math.round(totalMillisegundos/1000)
@@ -30,4 +30,4 @@ function G4({dados}) {
  );
 }
 
-export default G4;
+export default ArtistasDiferentesOuvidosT;
