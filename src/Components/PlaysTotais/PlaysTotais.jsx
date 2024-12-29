@@ -12,7 +12,7 @@ function PlaysTotais({dados}) {
     borderRadius: '15px',
     color: 'white',
     minWidth: 200,
-    margin: 20
+    margin: 2
    }}>
      <CardContent>
        <Typography variant="h6" gutterBottom>

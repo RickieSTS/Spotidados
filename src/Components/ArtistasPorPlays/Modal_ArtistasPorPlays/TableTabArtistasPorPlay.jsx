@@ -7,6 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Link from "@mui/material/Link";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -47,25 +48,20 @@ function CalcularTimeFrame(sortByData) {
 
       return today - fourWeeks;
 
-      
     case "2":
       //Últimos 6 meses
       console.log(today - sixMonths + "Ultimos 6 Meses");
       return today - sixMonths;
 
-      
     case "3":
       //Último ano
       console.log(today - oneYear + "Ultimo ano");
       return today - oneYear;
 
-      
     case "4":
       //Desde sempre
       console.log(today + "Desde Sempre");
       return 0;
-
-      
   }
 }
 
@@ -75,7 +71,7 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
 
   React.useMemo(() => {
     //  console.log(CalcularTimeFrame(sortBy))
-    
+
     const ordenarPor = CalcularTimeFrame(sortBy);
 
     dados.map((e) => {
@@ -91,7 +87,7 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
           artistasPorPlayMap.set(e.master_metadata_album_artist_name, 1);
         }
       }
-      return ""
+      return "";
     });
 
     const orderedArtistasPorPlayMap = new Map(
@@ -130,7 +126,9 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
               <StyledTableCell component="th" scope="row">
                 {row.rank}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.artista}</StyledTableCell>
+              <StyledTableCell align="right">
+                <Link href={"/byArtist/" + row.artista}>{row.artista}</Link>
+              </StyledTableCell>
               <StyledTableCell align="right">{row.totalPlays}</StyledTableCell>
             </StyledTableRow>
           ))}
