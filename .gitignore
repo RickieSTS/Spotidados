@@ -23,3 +23,5 @@ spotidados_key.pub
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+spotidados_key
+spotidados_key.pub
