@@ -97,8 +97,10 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
     let index = 1;
     orderedArtistasPorPlayMap.forEach((val, key) => {
       if (key) {
-        rows.push(createData(index, key, val));
-        index++;
+        if (index <= 100) {
+          rows.push(createData(index, key, val));
+          index++;
+        }
       }
     });
   }, [sortBy, rows]);
