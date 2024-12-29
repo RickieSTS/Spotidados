@@ -7,8 +7,8 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-import TabArtistasPorPlays from "./TabArtistasPorPlay";
-import TabMusicasPorMilisegundos from "./TabMusicasPorMilisegundos";
+import TabArtistasPorPlays from "./Tab_Artistas_Por_Play/TabArtistasPorPlay";
+import TabMusicasPorMilisegundos from "./Tab_Musicas_Por_Milisegundos/TabMusicasPorMilisegundos";
 
 function ModalArtistasPorPlays({ dados }) {
   const theme = useTheme();
