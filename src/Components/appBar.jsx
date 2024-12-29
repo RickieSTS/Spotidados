@@ -54,8 +54,8 @@ function NavBar() {
                     <path
                       d="M25.5005 61.5001L41.0004 30.5001L55.5 54.0001L64 40.0002L77.4997 54.0001"
                       stroke="white"
-                      stroke-width="4"
-                      stroke-linecap="round"
+                      strokeWidth="4"
+                      strokeLinecap="round"
                     />
                     <circle cx="74.5" cy="29.5" r="5.5" fill="#005246" />
                     <ellipse cx="42" cy="77.5" rx="3" ry="2.5" fill="#CD88FF" />
@@ -69,8 +69,8 @@ function NavBar() {
                         y2="90"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stop-color="#005246" />
-                        <stop offset="1" stop-color="#5B21B6" />
+                        <stop stopColor="#005246" />
+                        <stop offset="1" stopColor="#5B21B6" />
                       </linearGradient>
                     </defs>
                   </svg>

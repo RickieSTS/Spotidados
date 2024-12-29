@@ -60,9 +60,9 @@ function ArtistasPorPlays({ dados }) {
           <Typography id="Top 100" variant="h6" component="h2">
             Top 100
           </Typography>
-          <Typography id="Tabs" sx={{ mt: 2 }}>
+          <Box id="Tabs" sx={{ mt: 2 }}>
             <ModalArtistasPorPlays dados={dados} />
-          </Typography>
+          </Box>
         </Box>
       </Modal>
     </>
