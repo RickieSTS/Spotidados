@@ -42,7 +42,7 @@ function ModalArtistasPorPlays({ dados }) {
           indicatorColor="secondary"
           textColor="inherit"
           variant="fullWidth"
-          aria-label="full width tabs example"
+          aria-label="2 Tabs"
          
         >
           <Tab label="Artistas por Plays" {...a11yProps(0)} />
@@ -67,7 +67,7 @@ function TabPanel(props) {
       role="tabpanel"
       hidden={value !== index}
       id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
+      aria-labelledby={`tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -88,7 +88,7 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
+    "aria-controls": `tab-panel-${index}`,
   };
 }
 

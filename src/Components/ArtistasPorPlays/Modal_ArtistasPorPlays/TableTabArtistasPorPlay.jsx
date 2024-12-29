@@ -112,7 +112,7 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
         overflowX: "hidden",
       }}
     >
-      <Table sx={{ minWidth: 200 }} aria-label="customized table">
+      <Table sx={{ minWidth: 200 }} aria-label="Tabela Artistas por Plays">
         <TableHead>
           <TableRow>
             <StyledTableCell>Rank</StyledTableCell>

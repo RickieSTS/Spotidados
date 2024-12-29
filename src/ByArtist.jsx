@@ -30,7 +30,7 @@ function ByArtist() {
               <Box>
                 <span sx={{ display: "flex" }}>
                   {" "}
-                  O meu histórico do Spotify
+                  {params.artistName}
                 </span>
               </Box>
             </Grid>

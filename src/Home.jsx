@@ -18,7 +18,7 @@ function Home() {
   
   return (
     
-      <React.Fragment>
+      <>
         <CssBaseline />
         <NavBar />
         <Container maxWidth="xxl">
@@ -65,7 +65,7 @@ function Home() {
             </Grid>
           </Box>
         </Container>
-      </React.Fragment>
+      </>
     
   );
 }

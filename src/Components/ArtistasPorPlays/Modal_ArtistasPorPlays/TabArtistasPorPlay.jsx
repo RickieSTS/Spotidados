@@ -16,7 +16,7 @@ function TabArtistasPorPlays({ dados }) {
     <>
       
       <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="demo-simple-select">Ordenar Por</InputLabel>
+        <InputLabel variant="standard" htmlFor="ordenar-por">Ordenar Por</InputLabel>
         <NativeSelect
          // labelId="demo-simple-select-label"
           //id="demo-simple-select"
@@ -26,7 +26,7 @@ function TabArtistasPorPlays({ dados }) {
           onChange={handleChangeDropTabArtistas}
           inputProps={{
             name: 'Ordenar Por',
-            id: 'demo-simple-select',
+            id: 'ordenar-por',
           }}
         >
           <option  value={1}>Últimas 4 semanas</option>

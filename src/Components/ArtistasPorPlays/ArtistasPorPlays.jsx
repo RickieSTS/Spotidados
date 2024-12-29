@@ -53,14 +53,14 @@ function ArtistasPorPlays({ dados }) {
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        aria-labelledby="Modal Top 100"
+        aria-describedby="Modals com Tabs Artistas por Plays e Muscias por Milisegundos"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography id="Top 100" variant="h6" component="h2">
             Top 100
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="Tabs" sx={{ mt: 2 }}>
             <ModalArtistasPorPlays dados={dados} />
           </Typography>
         </Box>
