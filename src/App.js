@@ -9,18 +9,19 @@ import MusicasDiferentesOuvidasT from "./Components/MusicasDiferentesOuvidasT/Mu
 import ArtistasDiferentesOuvidosT from "./Components/ArtistasDiferentesOuvidosT/ArtistasDiferentesOuvidosT.jsx";
 import PlaysTotais from "./Components/PlaysTotais/PlaysTotais.jsx";
 import G4 from "./Components/MinutosPassados/MinutosPassados.jsx";
-import G11 from "./Components/g11/g11.jsx";
+import ArtistasPorPlays from "./Components/ArtistasPorPlays/ArtistasPorPlays.jsx";
 import data from "../src/spotify_data_history.json";
 import NavBar from "../src/Components/appBar.jsx";
 
+
 function App() {
+  
   return (
     <div className="App">
       <React.Fragment>
         <CssBaseline />
-        <NavBar/>
+        <NavBar />
         <Container maxWidth="xxl">
-         
           <Box sx={{ bgcolor: "#cfe8fc", height: "100vh", m: 1 }}>
             <Grid
               sx={{ border: "black solid 5px" }}
@@ -36,8 +37,6 @@ function App() {
                 }}
                 size={{ xs: 12 }}
               >
-                
-
                 <Box>
                   <span sx={{ display: "flex" }}>
                     {" "}
@@ -57,8 +56,11 @@ function App() {
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
                 <G4 dados={data} />
               </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 12 }}>
-                <G11 />
+              <Grid
+                sx={{ border: "black solid 5px" }}
+                size={{ xs: 12, md: 12 }}
+              >
+                <ArtistasPorPlays dados={data} />
               </Grid>
             </Grid>
           </Box>
