@@ -14,6 +14,7 @@ function PlaysTotais({dados}) {
     minWidth: 200,
     margin: 20
    }}>
+
      <CardContent>
        <Typography variant="h6" gutterBottom>
          Total de Plays
