@@ -1,32 +1,4 @@
-// import { Card, CardContent, Typography } from '@mui/material';
-// function MusicaMaisOuvidaPorPlays({dados}) {
-// //G2) Ver quantas músicas diferentes já foram ouvidas no total.
-//   const count = new Set(dados.map((e)=>(e.master_metadata_track_name)));
-    
-    
-//   return(
-//     <Card sx={{ 
-//       bgcolor: '#666666', 
-//       border: '2px solid #808080', 
-//       borderRadius: '15px',
-//       color: 'white',
-//       minWidth: 200,
-//       margin: 20
-//      }}>
-//        <CardContent>
-//          <Typography variant="h6" gutterBottom>
-//         Músicas Diferentes Ouvidas 
-//          </Typography>
-//          <Typography variant="h5">
-           
-//            Plays:{count.size}
-//          </Typography>
-//        </CardContent>
-//      </Card>
-//    );
-//   }
 
-// export default MusicaMaisOuvidaPorPlays;
 import { Card, CardContent, Typography } from '@mui/material';
 import React from 'react';
 

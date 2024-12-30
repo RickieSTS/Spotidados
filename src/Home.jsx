@@ -8,8 +8,9 @@ import Grid from "@mui/material/Grid2";
 import MusicasDiferentesOuvidasT from "./Components/MusicasDiferentesOuvidasT/MusicasDiferentesOuvidasT.jsx";
 import ArtistasDiferentesOuvidosT from "./Components/ArtistasDiferentesOuvidosT/ArtistasDiferentesOuvidosT.jsx";
 import PlaysTotais from "./Components/PlaysTotais/PlaysTotais.jsx";
-import G4 from "./Components/MinutosPassados/MinutosPassados.jsx";
+import MinutosPassados from "./Components/MinutosPassados/MinutosPassados.jsx";
 import ArtistasPorPlays from "./Components/ArtistasPorPlays/ArtistasPorPlays.jsx";
+import MusicaMaisOuvidaPorPlays from "./Components/MusicaMaisOuvidaPorPlays/MusicaMaisOuvidaPorPlays.jsx";
 import data from "./spotify_data_history.json";
 import NavBar from "./Components/appBar.jsx";
 
@@ -54,7 +55,10 @@ function Home() {
                 <ArtistasDiferentesOuvidosT dados={data} />
               </Grid>
               <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <G4 dados={data} />
+                <MinutosPassados dados={data} />
+              </Grid>
+              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
+                <MusicaMaisOuvidaPorPlays dados={data} />
               </Grid>
               <Grid
                 sx={{ border: "black solid 5px" }}
