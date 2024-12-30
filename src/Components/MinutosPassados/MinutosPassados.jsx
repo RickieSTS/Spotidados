@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 
 
 
-function ArtistasDiferentesOuvidosT({dados}) {
+function MinutosPassados ({dados}) {
 
     const totalMillisegundos = dados.reduce((acc, cur)=> acc+=cur.ms_played, 0)
     const totalMinutos = Math.round(totalMillisegundos/1000)
@@ -30,4 +30,4 @@ function ArtistasDiferentesOuvidosT({dados}) {
  );
 }
 
-export default ArtistasDiferentesOuvidosT;
+export default MinutosPassados;
