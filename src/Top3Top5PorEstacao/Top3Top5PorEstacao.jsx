@@ -44,11 +44,13 @@ function Top5MusicasPorEstacao({ dados, selectedSeason }) {
   return (
     <div>
       <h3>Top 5 Músicas</h3>
-      <ul>
         {topTracks.map((track) => (
-          <li key={track}>{track}</li>
+          <p key={track} style={{
+             displayflex: "column",
+            flexwrap: "wrap"
+          }}
+          >{track}</p>
         ))}
-      </ul>
     </div>
   );
 }
@@ -100,11 +102,16 @@ function Top3ArtistasPorEstacao({ dados, selectedSeason }) {
   return (
     <div>
       <h3>Top 3 Artistas </h3>
-      <ul>
+   
         {topArtists.map((artist) => (
-          <li key={artist}>{artist}</li>
+          <p key={artist} style={{
+            displayflex: "column",
+            flexwrap: "wrap"
+           
+          }}
+          >{artist}</p>
         ))}
-      </ul>
+     
     </div>
   );
 }
