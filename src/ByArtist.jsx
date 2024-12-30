@@ -9,6 +9,8 @@ import Grid from "@mui/material/Grid2";
 import NavBar from "./Components/appBar.jsx";
 import PercentagemPlaysArtista from "./Components/PercentagemPlaysArtista/PercentagemPlaysArtista.jsx";
 import data from "./spotify_data_history.json";
+import Top20MusicasArtista from "./Components/Top20MusicasArtista/Top20MusicasArtista.jsx";
+import PosicaoDoArtistaTop100 from "./Components/PosicaoDoArtistaTop100/PosicaoDoArtistaTop100.jsx";
 
 function ByArtist() {
   const params = useParams(); //params.artistName
@@ -39,7 +41,7 @@ function ByArtist() {
              <PercentagemPlaysArtista dados={data} artist={params.artistName}/>
             </Grid>
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-             B
+             <PosicaoDoArtistaTop100 dados={data} artist={params.artistName}/>
             </Grid>
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
             C
@@ -48,7 +50,7 @@ function ByArtist() {
              D
             </Grid>
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 12 }}>
-           E
+           <Top20MusicasArtista dados={data} artist={params.artistName}/>
             </Grid>
           </Grid>
         </Box>
