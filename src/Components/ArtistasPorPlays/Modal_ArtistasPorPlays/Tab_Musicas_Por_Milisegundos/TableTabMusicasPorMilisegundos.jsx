@@ -33,6 +33,23 @@ function createData(rank, musica, tempoTotal) {
   return { rank, musica, tempoTotal };
 }
 
+function converterMilisegundos(ms) {
+  const totalSeconds = ms / 1000;
+  const totalMinutes = totalSeconds / 60;
+  const hours = Math.floor(totalMinutes / 60);
+
+  const minutes = Math.floor(totalMinutes % 60);
+  const seconds = Math.floor(totalSeconds % 60);
+
+  const formattedHours = String(hours).padStart(2, "0");
+  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedSeconds = String(seconds).padStart(2, "0");
+
+  return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+
+ 
+}
+
 function CalcularTimeFrame(sortByData) {
   const today = Date.parse(new Date("2023-12-19"));
 
@@ -44,23 +61,23 @@ function CalcularTimeFrame(sortByData) {
     default:
     case "1":
       //Últimas 4 semanas
-      console.log(today - fourWeeks + "Ultimas 4 Semanas");
+      //console.log(today - fourWeeks + "Ultimas 4 Semanas");
 
       return today - fourWeeks;
 
     case "2":
       //Últimos 6 meses
-      console.log(today - sixMonths + "Ultimos 6 Meses");
+      //console.log(today - sixMonths + "Ultimos 6 Meses");
       return today - sixMonths;
 
     case "3":
       //Último ano
-      console.log(today - oneYear + "Ultimo ano");
+      //console.log(today - oneYear + "Ultimo ano");
       return today - oneYear;
 
     case "4":
       //Desde sempre
-      console.log(today + "Desde Sempre");
+      //console.log(today + "Desde Sempre");
       return 0;
   }
 }
@@ -101,7 +118,7 @@ function TableTabMusicasPorMilisegundos({ dados, sortBy }) {
     let index = 1;
     orderedMusicasPorMilisegundosMap.forEach((val, key) => {
       if (key) {
-        if(index <= 100){
+        if (index <= 100) {
           rows.push(createData(index, key, val));
           index++;
         }
@@ -134,7 +151,9 @@ function TableTabMusicasPorMilisegundos({ dados, sortBy }) {
               </StyledTableCell>
               <StyledTableCell align="right">{row.musica}</StyledTableCell>
 
-              <StyledTableCell align="right">{row.tempoTotal}</StyledTableCell>
+              <StyledTableCell align="right">
+                {converterMilisegundos(row.tempoTotal)}
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

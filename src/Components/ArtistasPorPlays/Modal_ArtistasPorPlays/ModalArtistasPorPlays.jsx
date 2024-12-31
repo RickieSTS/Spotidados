@@ -7,8 +7,8 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-import TabArtistasPorPlays from "./TabArtistasPorPlay";
-import TabMusicasPorMilisegundos from "./TabMusicasPorMilisegundos";
+import TabArtistasPorPlays from "./Tab_Artistas_Por_Play/TabArtistasPorPlay";
+import TabMusicasPorMilisegundos from "./Tab_Musicas_Por_Milisegundos/TabMusicasPorMilisegundos";
 
 function ModalArtistasPorPlays({ dados }) {
   const theme = useTheme();
@@ -18,21 +18,6 @@ function ModalArtistasPorPlays({ dados }) {
     setValue(newValue);
   };
  
-  // const mapTop100 = new Map()
-
-  // const a = data.map((cur) => {
-  //     if(mapTop100.has(cur)){
-  //         return mapTop100.set(cur, mapTop100.get(cur)+1)
-  //     }
-  //     else{
-  //         return mapTop100.set(cur, 1)
-  //     }
-  // },0)
-
-
-  
-
-
   return (
     <Box sx={{ bgcolor: "background.paper", width: "100%" }}>
       <AppBar position="static">
@@ -72,7 +57,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <Box>{children}</Box>
         </Box>
       )}
     </div>

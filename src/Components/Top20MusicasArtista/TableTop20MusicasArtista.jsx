@@ -7,7 +7,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Link from "@mui/material/Link";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -29,8 +28,23 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(rank, artista, totalPlays) {
-  return { rank, artista, totalPlays };
+function createData(rank, musica, tempoTotal) {
+  return { rank, musica, tempoTotal };
+}
+
+function converterMilisegundos(ms) {
+  const totalSeconds = ms / 1000;
+  const totalMinutes = totalSeconds / 60;
+  const hours = Math.floor(totalMinutes / 60);
+
+  const minutes = Math.floor(totalMinutes % 60);
+  const seconds = Math.floor(totalSeconds % 60);
+
+  const formattedHours = String(hours).padStart(2, "0");
+  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedSeconds = String(seconds).padStart(2, "0");
+
+  return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }
 
 function CalcularTimeFrame(sortByData) {
@@ -44,30 +58,30 @@ function CalcularTimeFrame(sortByData) {
     default:
     case "1":
       //Últimas 4 semanas
-      console.log(today - fourWeeks + "Ultimas 4 Semanas");
+      //console.log(today - fourWeeks + "Ultimas 4 Semanas");
 
       return today - fourWeeks;
 
     case "2":
       //Últimos 6 meses
-      console.log(today - sixMonths + "Ultimos 6 Meses");
+      //console.log(today - sixMonths + "Ultimos 6 Meses");
       return today - sixMonths;
 
     case "3":
       //Último ano
-      console.log(today - oneYear + "Ultimo ano");
+      //console.log(today - oneYear + "Ultimo ano");
       return today - oneYear;
 
     case "4":
       //Desde sempre
-      console.log(today + "Desde Sempre");
+      //console.log(today + "Desde Sempre");
       return 0;
   }
 }
 
-function TableTabArtistasPorPlay({ dados, sortBy }) {
+function TableTop20MusicasArtista({ dados, sortBy, artist }) {
   const rows = [];
-  const artistasPorPlayMap = new Map();
+  const musicasPorMilisegundosMap = new Map();
 
   React.useMemo(() => {
     //  console.log(CalcularTimeFrame(sortBy))
@@ -78,27 +92,35 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
       const songDate = Date.parse(e.ts);
 
       if (songDate >= ordenarPor) {
-        if (artistasPorPlayMap.has(e.master_metadata_album_artist_name)) {
-          artistasPorPlayMap.set(
-            e.master_metadata_album_artist_name,
-            artistasPorPlayMap.get(e.master_metadata_album_artist_name) + 1
-          );
-        } else {
-          artistasPorPlayMap.set(e.master_metadata_album_artist_name, 1);
+        if (e.master_metadata_album_artist_name === artist) {
+          if (musicasPorMilisegundosMap.has(e.master_metadata_track_name)) {
+            musicasPorMilisegundosMap.set(
+              e.master_metadata_track_name,
+              musicasPorMilisegundosMap.get(e.master_metadata_track_name) +
+                e.ms_played
+            );
+          } else {
+            musicasPorMilisegundosMap.set(
+              e.master_metadata_track_name,
+              e.ms_played
+            );
+          }
         }
       }
       return "";
     });
 
-    const orderedArtistasPorPlayMap = new Map(
-      [...artistasPorPlayMap.entries()].sort((a, b) => b[1] - a[1])
+    const orderedMusicasPorMilisegundosMap = new Map(
+      [...musicasPorMilisegundosMap.entries()].sort((a, b) => b[1] - a[1])
     );
 
     let index = 1;
-    orderedArtistasPorPlayMap.forEach((val, key) => {
+    orderedMusicasPorMilisegundosMap.forEach((val, key) => {
       if (key) {
-        rows.push(createData(index, key, val));
-        index++;
+        if (index <= 20) {
+          rows.push(createData(index, key, val));
+          index++;
+        }
       }
     });
   }, [sortBy, rows]);
@@ -116,8 +138,8 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
         <TableHead>
           <TableRow>
             <StyledTableCell>Rank</StyledTableCell>
-            <StyledTableCell align="right">Artista</StyledTableCell>
-            <StyledTableCell align="right">Total Plays</StyledTableCell>
+            <StyledTableCell align="right">Musica</StyledTableCell>
+            <StyledTableCell align="right">Tempo Total</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -126,10 +148,11 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
               <StyledTableCell component="th" scope="row">
                 {row.rank}
               </StyledTableCell>
+              <StyledTableCell align="right">{row.musica}</StyledTableCell>
+
               <StyledTableCell align="right">
-                <Link href={"/byArtist/" + row.artista}>{row.artista}</Link>
+                {converterMilisegundos(row.tempoTotal)}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.totalPlays}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
@@ -138,4 +161,4 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
   );
 }
 
-export default TableTabArtistasPorPlay;
+export default TableTop20MusicasArtista;
