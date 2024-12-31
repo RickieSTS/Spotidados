@@ -12,6 +12,11 @@ import G4 from "./Components/MinutosPassados/MinutosPassados.jsx";
 import ArtistasPorPlays from "./Components/ArtistasPorPlays/ArtistasPorPlays.jsx";
 import data from "./spotify_data_history.json";
 import NavBar from "./Components/appBar.jsx";
+import MediaDiariaAOuvir from "./Components/MediaDiariaAOuvir/MediaDiariaAOuvir.jsx";
+import HoraDoDia from "./Components/HoraDoDia/HoraDoDia.jsx";
+import MaisOuvidaPorEstacao from "./Components/MaisOuvidaPorEstacao/MaisOuvidaPorEstacao.jsx";
+import Top3Top5PorEstacao from "./Components/Top3Top5PorEstacao/Top3Top5PorEstacao.jsx";
+
 
 
 function Home() {
@@ -61,6 +66,18 @@ function Home() {
                 size={{ xs: 12, md: 12 }}
               >
                 <ArtistasPorPlays dados={data} />
+              </Grid>
+              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
+                <MediaDiariaAOuvir dados={data} />
+              </Grid>
+              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
+                <HoraDoDia dados={data} />
+              </Grid>
+              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 12 }}>
+                <MaisOuvidaPorEstacao dados={data} />
+              </Grid>
+              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 12 }}>
+                <Top3Top5PorEstacao dados={data} />
               </Grid>
             </Grid>
           </Box>
