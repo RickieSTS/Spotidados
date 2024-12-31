@@ -5,7 +5,9 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid2";
-
+import MinutosOuvidos from "./Components/MinutosOuvidos/MinutosOuvidos.jsx";
+import DiferentesMusicas from "./Components/DiferentesMusicas/DiferentesMusicas.jsx";
+import data from "./spotify_data_history.json";
 import NavBar from "./Components/appBar.jsx";
 import PercentagemPlaysArtista from "./Components/PercentagemPlaysArtista/PercentagemPlaysArtista.jsx";
 import data from "./spotify_data_history.json";
@@ -47,10 +49,15 @@ function ByArtist() {
             C
             </Grid>
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-             D
+            <MinutosOuvidos dados={data} artist={params.artistName}/>
             </Grid>
+<<<<<<< HEAD
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 12 }}>
            <Top20MusicasArtista dados={data} artist={params.artistName}/>
+=======
+            <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
+            <DiferentesMusicas dados={data} artist={params.artistName}/>
+>>>>>>> main
             </Grid>
           </Grid>
         </Box>
