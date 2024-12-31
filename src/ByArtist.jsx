@@ -7,7 +7,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid2";
 import MinutosOuvidos from "./Components/MinutosOuvidos/MinutosOuvidos.jsx";
 import DiferentesMusicas from "./Components/DiferentesMusicas/DiferentesMusicas.jsx";
-import data from "./spotify_data_history.json";
 import NavBar from "./Components/appBar.jsx";
 import PercentagemPlaysArtista from "./Components/PercentagemPlaysArtista/PercentagemPlaysArtista.jsx";
 import data from "./spotify_data_history.json";
