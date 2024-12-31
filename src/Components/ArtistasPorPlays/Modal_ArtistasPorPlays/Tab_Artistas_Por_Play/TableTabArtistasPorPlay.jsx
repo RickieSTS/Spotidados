@@ -23,7 +23,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
+
   "&:last-child td, &:last-child th": {
     border: 0,
   },
@@ -43,24 +43,15 @@ function CalcularTimeFrame(sortByData) {
   switch (sortByData) {
     default:
     case "1":
-      //Últimas 4 semanas
-      //console.log(today - fourWeeks + "Ultimas 4 Semanas");
-
       return today - fourWeeks;
 
     case "2":
-      //Últimos 6 meses
-      //console.log(today - sixMonths + "Ultimos 6 Meses");
       return today - sixMonths;
 
     case "3":
-      //Último ano
-      //console.log(today - oneYear + "Ultimo ano");
       return today - oneYear;
 
     case "4":
-      //Desde sempre
-      //console.log(today + "Desde Sempre");
       return 0;
   }
 }
@@ -70,8 +61,6 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
   const artistasPorPlayMap = new Map();
 
   React.useMemo(() => {
-    //  console.log(CalcularTimeFrame(sortBy))
-
     const ordenarPor = CalcularTimeFrame(sortBy);
 
     dados.map((e) => {

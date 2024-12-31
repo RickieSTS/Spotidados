@@ -51,13 +51,8 @@ function ByArtist() {
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
             <MinutosOuvidos dados={data} artist={params.artistName}/>
             </Grid>
-<<<<<<< HEAD
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 12 }}>
            <Top20MusicasArtista dados={data} artist={params.artistName}/>
-=======
-            <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-            <DiferentesMusicas dados={data} artist={params.artistName}/>
->>>>>>> main
             </Grid>
           </Grid>
         </Box>
