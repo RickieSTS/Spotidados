@@ -13,6 +13,7 @@ function PercentagemPlaysArtista({ dados, artist }) {
     } else {
       artistasPorPlayMap.set(e.master_metadata_album_artist_name, 1);
     }
+    return ""
   });
 
   const playsTotais = dados.reduce((acc, cur) => {

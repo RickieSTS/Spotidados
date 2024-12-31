@@ -1,9 +1,8 @@
 import { Card, CardContent, Typography } from "@mui/material";
-
-function PlaysTotalArtista({ dados, artista }) {
-  
+import "../../theme";
+function PlaysTotalArtista({ dados, artist }) {
   const playsDoArtista = dados.filter(
-    (item) => item.master_metadata_album_artist_name === artista
+    (item) => item.master_metadata_album_artist_name === artist
   );
 
   return (
@@ -19,11 +18,9 @@ function PlaysTotalArtista({ dados, artista }) {
     >
       <CardContent>
         <Typography variant="h6" gutterBottom>
-          Total de Plays - {artista}
+          Total de Plays - {artist}
         </Typography>
-        <Typography variant="h5">
-          Plays: {playsDoArtista.length}
-        </Typography>
+        <Typography variant="h5">Plays: {playsDoArtista.length}</Typography>
       </CardContent>
     </Card>
   );
