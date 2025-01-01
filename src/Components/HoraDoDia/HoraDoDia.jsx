@@ -16,15 +16,7 @@ function HoraDoDia({ dados }) {
       .slice(0, 1); 
   
     return (
-        <Card sx={{ 
-            alignContent: 'center',
-            bgcolor: '#666666', 
-            border: '2px solid #808080', 
-            borderRadius: '15px',
-            color: 'white',
-            minWidth: 200,
-            margin: 2
-           }}>
+        <Card variant='verdeMusga'>
             <CardContent>
        <Typography variant="h6" gutterBottom>
        A minha hora favorita:

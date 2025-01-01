@@ -27,14 +27,7 @@ function MusicaMaisOuvidaPorPlays({ dados }) {
     }, [dados]);
 
     return (
-        <Card sx={{
-            bgcolor: '#666666',
-            border: '2px solid #808080',
-            borderRadius: '15px',
-            color: 'white',
-            minWidth: 200,
-            margin: 20
-        }}>
+        <Card variant='verdeMusga'>
             <CardContent>
                 <Typography variant="h6" gutterBottom>
                     Música Mais Ouvida

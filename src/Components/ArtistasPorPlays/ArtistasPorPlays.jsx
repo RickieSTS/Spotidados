@@ -23,16 +23,9 @@ function ArtistasPorPlays({ dados }) {
  
   return (
     <>
-      <Card
+      <Card variant="verdeMusga"
         onClick={handleOpen}
-        sx={{
-          bgcolor: "#666666",
-          border: "2px solid #808080",
-          borderRadius: "15px",
-          color: "white",
-          minWidth: 200,
-          margin: 2,
-        }}
+        
       >
         <CardContent>
           <Typography variant="h5" gutterBottom>

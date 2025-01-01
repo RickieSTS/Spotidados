@@ -116,14 +116,7 @@ function MusicasDiferentesOuvidasT({dados}) {
     }, [isDragging, slides.length]);
 
     return (
-        <Card sx={{
-            bgcolor: '#666666',
-            border: '2px solid #808080',
-            borderRadius: '15px',
-            color: 'white',
-            margin: '20px',
-            height: '280px'
-        }}>
+        <Card variant="flufyRosa">
             <CardContent>
                 <Typography variant="h6" align="center" gutterBottom>
                     Músicas Diferentes Ouvidas
