@@ -7,7 +7,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Link from "@mui/material/Link";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -138,7 +137,7 @@ function TableTabMusicasPorMilisegundos({ dados, sortBy }) {
       <Table sx={{ minWidth: 200 }} aria-label="Tabela Artistas por Plays">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Rank</StyledTableCell>
+            <StyledTableCell>#</StyledTableCell>
             <StyledTableCell align="right">Musica</StyledTableCell>
             <StyledTableCell align="right">Tempo Total</StyledTableCell>
           </TableRow>

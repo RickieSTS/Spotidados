@@ -9,21 +9,13 @@ function MinutosPassados ({dados}) {
     const totalMinutos = Math.round(totalMillisegundos/1000)
 
  return (
-   <Card sx={{ 
-    bgcolor: '#666666', 
-    border: '2px solid #808080', 
-    borderRadius: '15px',
-    color: 'white',
-    minWidth: 200,
-    margin: 2
-   }}>
+   <Card variant='flufyRosa'>
      <CardContent>
-       <Typography variant="h5" gutterBottom>
-         Total de Minutos
+       <Typography variant="h4" gutterBottom>
+         {totalMinutos} min
        </Typography>
-       <Typography variant="h4">
-         
-         Min: {totalMinutos}
+       <Typography variant="h5">
+         a ouvir música
        </Typography>
      </CardContent>
    </Card>

@@ -4,6 +4,7 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid2";
+import { ThemeProvider } from "@mui/material/styles";
 
 import MusicasDiferentesOuvidasT from "./Components/MusicasDiferentesOuvidasT/MusicasDiferentesOuvidasT.jsx";
 import ArtistasDiferentesOuvidosT from "./Components/ArtistasDiferentesOuvidosT/ArtistasDiferentesOuvidosT.jsx";
@@ -17,79 +18,56 @@ import MediaDiariaAOuvir from "./Components/MediaDiariaAOuvir/MediaDiariaAOuvir.
 import HoraDoDia from "./Components/HoraDoDia/HoraDoDia.jsx";
 import MaisOuvidaPorEstacao from "./Components/MaisOuvidaPorEstacao/MaisOuvidaPorEstacao.jsx";
 import Top3Top5PorEstacao from "./Components/Top3Top5PorEstacao/Top3Top5PorEstacao.jsx";
-// import Top5MusicasPorEstacao from "./Components/Top3Top5PorEstacao/Top5MusciasPorEstacao/Top5MusicasPorEstacao.jsx";
-// import Top3ArtistasPorEstacao from "./Components/Top3Top5PorEstacao/Top3ArtistasPorEstacao/Top3ArtistasPorEstacao.jsx";
-
-
+import spotidadosTheme from "./theme.js";
 
 function Home() {
-  
   return (
-    
-      <>
-        <CssBaseline />
-        <NavBar />
-        <Container maxWidth="xxl">
-          <Box sx={{ bgcolor: "#cfe8fc", height: "100vh", m: 1 }}>
-            <Grid
-              sx={{ border: "black solid 5px" }}
-              container
-              
-              columns={12}
-            >
-              <Grid
-                sx={{
-                  border: "black solid 5px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-                size={{ xs: 12 }}
-              >
-                <Box>
-                  <span sx={{ display: "flex" }}>
-                    {" "}
-                    O meu histórico do Spotify
-                  </span>
-                </Box>
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <PlaysTotais dados={data} />
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <MusicasDiferentesOuvidasT dados={data} />
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <ArtistasDiferentesOuvidosT dados={data} />
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <MinutosPassados dados={data} />
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <MusicaMaisOuvidaPorPlays dados={data} />
-              </Grid>
-              <Grid
-                sx={{ border: "black solid 5px" }}
-                size={{ xs: 12, md: 12 }}
-              >
-                <ArtistasPorPlays dados={data} />
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <MediaDiariaAOuvir dados={data} />
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-                <HoraDoDia dados={data} />
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 12 }}>
-                <MaisOuvidaPorEstacao dados={data} />
-              </Grid>
-              <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 12 }}>
-                <Top3Top5PorEstacao dados={data} />
+    <ThemeProvider theme={spotidadosTheme}>
+      <CssBaseline />
+      <NavBar />
+      <Container sx={{ backgroundColor: spotidadosTheme.palette.spotiColors.cinzaFraco }} maxWidth="xxl">
+        <Box sx={{ p:1 }}>
+          <Grid container columns={12} spacing={2}>
+            <Grid item size={{ xs: 6, md: 6 }}>
+              <ArtistasPorPlays dados={data} />
+            </Grid>
+            <Grid item size={{ xs: 6, md: 6 }}>
+              <Grid container direction="column" spacing={2}>
+                <Grid item>
+                  <PlaysTotais dados={data} />
+                </Grid>
+                <Grid item>
+                  <MinutosPassados dados={data} />
+                </Grid>
               </Grid>
             </Grid>
-          </Box>
-        </Container>
-      </>
-    
+          </Grid>
+          <Grid sx={{ mt: 2}} container columns={18} spacing={2}>
+            <Grid item size={{ xs: 18, md: 18 }} spacing={2}>
+              <MusicasDiferentesOuvidasT dados={data} />
+            </Grid>
+            <Grid item size={{ xs: 18, md: 18 }}>
+              <ArtistasDiferentesOuvidosT dados={data} />
+            </Grid>
+            <Grid item size={{ xs: 9, md: 6 }}>
+              <MusicaMaisOuvidaPorPlays dados={data} />
+            </Grid>
+            <Grid item size={{ xs: 9, md: 6 }}>
+              <MediaDiariaAOuvir dados={data} />
+            </Grid>
+            <Grid item size={{ xs: 9, md: 6 }}>
+              <HoraDoDia dados={data} />
+            </Grid>
+            <Grid item size={{ xs: 9, md: 18 }}>
+              <MaisOuvidaPorEstacao dados={data} />
+            </Grid>
+            <Grid item size={{ xs: 18, md: 18 }}>
+              <Top3Top5PorEstacao dados={data} />
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 }
 

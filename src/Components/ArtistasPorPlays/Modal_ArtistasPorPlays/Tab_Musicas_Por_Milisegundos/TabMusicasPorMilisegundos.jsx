@@ -18,6 +18,7 @@ function TabMusicasPorMilisegundos({ dados }) {
           Ordenar Por
         </InputLabel>
         <NativeSelect
+          sx={{ my: 2}}
           // labelId="demo-simple-select-label"
           //id="demo-simple-select"
           //value={timeStamp}

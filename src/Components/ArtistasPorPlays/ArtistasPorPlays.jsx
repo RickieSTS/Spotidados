@@ -23,31 +23,26 @@ function ArtistasPorPlays({ dados }) {
  
   return (
     <>
-      <Card
+      <Card variant="verdeMusga"
         onClick={handleOpen}
-        sx={{
-          bgcolor: "#666666",
-          border: "2px solid #808080",
-          borderRadius: "15px",
-          color: "white",
-          minWidth: 200,
-          margin: 2,
-        }}
+        
       >
         <CardContent>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h3" sx={{textAlign: "center"}} gutterBottom>
             TOP 100
           </Typography>
           <Box
             component="img"
             sx={{
-              height: 100,
-              width: 100,
+              height: "100%",
+              width: "100%",
               borderRadius: "10px",
+
             }}
             alt="Duck avatar"
-            src="/path-to-duck-image.png"
+            src="https://i.pinimg.com/originals/75/e3/54/75e3545de733334504692917045cf5a2.jpg"
           />
+          
         </CardContent>
       </Card>
       <Modal
@@ -57,7 +52,7 @@ function ArtistasPorPlays({ dados }) {
         aria-describedby="Modals com Tabs Artistas por Plays e Muscias por Milisegundos"
       >
         <Box sx={style}>
-          <Typography id="Top 100" variant="h6" component="h2">
+          <Typography id="Top 100" variant="h4" sx={{ml : 2}} component="h2">
             Top 100
           </Typography>
           <Box id="Tabs" sx={{ mt: 2 }}>

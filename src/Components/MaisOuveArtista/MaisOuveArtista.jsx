@@ -1,6 +1,6 @@
 import { Card, CardContent, Typography } from "@mui/material";
 
-function MaisOuveArtista({ dados, artista }) {
+function MaisOuveArtista({ dados, artist }) {
   const obterEstacao = (data) => {
     const mes = data.getMonth() + 1;
 
@@ -14,11 +14,11 @@ function MaisOuveArtista({ dados, artista }) {
     Inverno: 0,
     Primavera: 0,
     Verão: 0,
-    Outono: 0,
+    Outono: 0
   };
 
   dados
-    .filter((registro) => registro.master_metadata_album_artist_name === artista) 
+    .filter((registro) => registro.master_metadata_album_artist_name === artist) 
     .forEach((registro) => {
       const data = new Date(registro.ts);
       const estacao = obterEstacao(data);
@@ -32,22 +32,13 @@ function MaisOuveArtista({ dados, artista }) {
   );
 
   return (
-    <Card
-      sx={{
-        bgcolor: "#666666",
-        border: "2px solid #808080",
-        borderRadius: "15px",
-        color: "white",
-        minWidth: 200,
-        margin: 2,
-      }}
-    >
+    <Card variant="flufyRosa" >
       <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Estação do Ano mais ouvida por {artista}:
+        <Typography variant="h5" gutterBottom>
+          Mais ouvido no
         </Typography>
-        <Typography variant="h5">
-          {estacaoMaisMusica.estacao.toUpperCase()}
+        <Typography variant="h4">
+          {estacaoMaisMusica.estacao}
         </Typography>
       </CardContent>
     </Card>
