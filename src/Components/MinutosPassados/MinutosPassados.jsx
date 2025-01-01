@@ -11,12 +11,11 @@ function MinutosPassados ({dados}) {
  return (
    <Card variant='flufyRosa'>
      <CardContent>
-       <Typography variant="h5" gutterBottom>
-         Total de Minutos
+       <Typography variant="h4" gutterBottom>
+         {totalMinutos} min
        </Typography>
-       <Typography variant="h4">
-         
-         Min: {totalMinutos}
+       <Typography variant="h5">
+         a ouvir música
        </Typography>
      </CardContent>
    </Card>

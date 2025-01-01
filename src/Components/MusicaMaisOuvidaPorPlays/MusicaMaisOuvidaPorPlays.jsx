@@ -34,11 +34,11 @@ function MusicaMaisOuvidaPorPlays({ dados }) {
                 </Typography>
                 {musicaMaisOuvida.nome ? (
                     <>
-                        <Typography variant="h5">
+                        <Typography variant="h4">
                             {musicaMaisOuvida.nome}
                         </Typography>
-                        <Typography variant="body1">
-                            Plays: {musicaMaisOuvida.plays}
+                        <Typography variant="h5">
+                            {musicaMaisOuvida.plays} Vezes
                         </Typography>
                     </>
                 ) : (

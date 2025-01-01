@@ -26,21 +26,12 @@ function PercentagemPlaysArtista({ dados, artist }) {
   const percentage = ((playsArtista)/(playsTotais)*100).toFixed(2)
 
   return (
-    <Card
-      sx={{
-        bgcolor: "#666666",
-        border: "2px solid #808080",
-        borderRadius: "15px",
-        color: "white",
-        minWidth: 200,
-        margin: 2,
-      }}
-    >
+    <Card variant="flufyRosa">
       <CardContent>
-        <Typography variant="h5" gutterBottom>
-          Percentagem
+        <Typography variant="h4" gutterBottom>
+          {percentage} %
         </Typography>
-        <Typography variant="h4">{percentage}%</Typography>
+        <Typography variant="h5"> de plays</Typography>
       </CardContent>
     </Card>
   );

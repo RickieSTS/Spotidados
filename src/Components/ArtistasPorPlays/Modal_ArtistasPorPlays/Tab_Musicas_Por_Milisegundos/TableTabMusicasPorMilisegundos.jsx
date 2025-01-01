@@ -137,7 +137,7 @@ function TableTabMusicasPorMilisegundos({ dados, sortBy }) {
       <Table sx={{ minWidth: 200 }} aria-label="Tabela Artistas por Plays">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Rank</StyledTableCell>
+            <StyledTableCell>#</StyledTableCell>
             <StyledTableCell align="right">Musica</StyledTableCell>
             <StyledTableCell align="right">Tempo Total</StyledTableCell>
           </TableRow>

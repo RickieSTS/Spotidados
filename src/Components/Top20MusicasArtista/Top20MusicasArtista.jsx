@@ -3,6 +3,8 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import TableTop20MusicasArtista from "./TableTop20MusicasArtista";
+import { Box } from "@mui/material";
+
 
 function Top20MusicasArtista({ dados, artist }) {
   const [timeStamp, setTimeStamp] = React.useState(1);
@@ -12,17 +14,16 @@ function Top20MusicasArtista({ dados, artist }) {
   };
 
   return (
-    <>
+    <Box
+      sx={{ backgroundColor: "#fff", borderRadius: "10px", p: 1 }}
+    >
       <FormControl fullWidth>
         <InputLabel variant="standard" htmlFor="ordenar-por">
           Ordenar Por
         </InputLabel>
         <NativeSelect
-          // labelId="demo-simple-select-label"
-          //id="demo-simple-select"
-          //value={timeStamp}
+          sx={{ my: 2 }}
           defaultValue={1}
-          //label="Ordenar Por"
           onChange={handleChangeDropTabArtistas}
           inputProps={{
             name: "Ordenar Por",
@@ -35,8 +36,12 @@ function Top20MusicasArtista({ dados, artist }) {
           <option value={4}>Desde sempre</option>
         </NativeSelect>
       </FormControl>
-      <TableTop20MusicasArtista dados={dados} artist={artist} sortBy={timeStamp} />
-    </>
+      <TableTop20MusicasArtista
+        dados={dados}
+        artist={artist}
+        sortBy={timeStamp}
+      />
+    </Box>
   );
 }
 

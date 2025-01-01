@@ -83,6 +83,8 @@ const spotidadosTheme = createTheme({
                 backgroundColor: "#CD88FF",
                 color: "#FFF",
                 borderRadius: "15px",
+                boxShadow: "2px 2px 5px #808080",
+                height: "100%",
               },
             },
             {
@@ -92,7 +94,7 @@ const spotidadosTheme = createTheme({
                 backgroundColor: "#63BAAB",
                 color: "#FFF",
                 borderRadius: "15px",
-
+                boxShadow: "2px 2px 5px #808080",
                 height: "100%",
               },
             },

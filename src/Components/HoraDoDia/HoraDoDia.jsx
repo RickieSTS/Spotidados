@@ -16,12 +16,12 @@ function HoraDoDia({ dados }) {
       .slice(0, 1); 
   
     return (
-        <Card variant='verdeMusga'>
+        <Card variant='flufyRosa'>
             <CardContent>
-       <Typography variant="h6" gutterBottom>
-       A minha hora favorita:
+       <Typography variant="h5" gutterBottom>
+       Ouço mais música às 
        </Typography>
-       <Typography variant="h5">
+       <Typography variant="h4">
           {sortedHours.map(([hour, msPlayed]) => (<>
               {hour}h00
               </>
