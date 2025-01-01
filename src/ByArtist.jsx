@@ -45,7 +45,7 @@ function ByArtist() {
              <PosicaoDoArtistaTop100 dados={data} artist={params.artistName}/>
             </Grid>
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-            C
+            <DiferentesMusicas dados={data} artist={params.artistName}/>
             </Grid>
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
             <MinutosOuvidos dados={data} artist={params.artistName}/>
