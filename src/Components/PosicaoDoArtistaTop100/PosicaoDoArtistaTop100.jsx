@@ -50,21 +50,12 @@ function PosicaoDoArtistaTop100({ dados, artist }) {
   console.log(rankInTop100);
 
   return (
-    <Card
-      sx={{
-        bgcolor: "#666666",
-        border: "2px solid #808080",
-        borderRadius: "15px",
-        color: "white",
-        minWidth: 200,
-        margin: 2,
-      }}
-    >
+    <Card variant="verdeMusga">
       <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Posição no Top 100
+        <Typography variant="h5" gutterBottom>
+          Top 100
         </Typography>
-        <Typography variant="h5">{rankInTop100!==0?("Rank: #"+rankInTop100):"Ainda não está no Top 100"}</Typography>
+        <Typography variant="h4">{rankInTop100!==0?("Rank #"+rankInTop100):"Ainda não está no Top 100"}</Typography>
       </CardContent>
     </Card>
   );

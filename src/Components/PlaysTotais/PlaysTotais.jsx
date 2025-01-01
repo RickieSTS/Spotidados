@@ -4,27 +4,18 @@ import { Card, CardContent, Typography } from "@mui/material";
 function PlaysTotais({ dados }) {
   //Verifica se a musica não é NULL para contar, se for NULL é um podcast
   const playsTotais = dados.reduce((acc, cur) => {
-      if(cur.master_metadata_track_name){
-        acc++
-      }
+    if (cur.master_metadata_track_name) {
+      acc++;
+    }
     return acc;
   }, 0);
   return (
-    <Card
-      sx={{
-        bgcolor: "#666666",
-        border: "2px solid #808080",
-        borderRadius: "15px",
-        color: "white",
-        minWidth: 200,
-        margin: 2,
-      }}
-    >
+    <Card variant="flufyRosa">
       <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Total de Plays
+        <Typography variant="h4" gutterBottom>
+          {playsTotais}
         </Typography>
-        <Typography variant="h5">Plays: {playsTotais}</Typography>
+        <Typography variant="h5">Músicas Ouvidas</Typography>
       </CardContent>
     </Card>
   );

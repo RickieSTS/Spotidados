@@ -100,13 +100,13 @@ function TableTabArtistasPorPlay({ dados, sortBy }) {
       sx={{
         height: "500px",
         overflowY: "scroll",
-        overflowX: "hidden",
+        overflowX: "auto",
       }}
     >
-      <Table sx={{ minWidth: 200 }} aria-label="Tabela Artistas por Plays">
+      <Table  aria-label="Tabela Artistas por Plays">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Rank</StyledTableCell>
+            <StyledTableCell>#</StyledTableCell>
             <StyledTableCell align="right">Artista</StyledTableCell>
             <StyledTableCell align="right">Total Plays</StyledTableCell>
           </TableRow>

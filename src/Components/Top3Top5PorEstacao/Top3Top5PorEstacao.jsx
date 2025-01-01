@@ -37,20 +37,28 @@ function Top5MusicasPorEstacao({ dados, selectedSeason }) {
 
   const topTracks = tracksBySeason[selectedSeason]
     ? Object.keys(tracksBySeason[selectedSeason])
-        .sort((a, b) => tracksBySeason[selectedSeason][b] - tracksBySeason[selectedSeason][a])
+        .sort(
+          (a, b) =>
+            tracksBySeason[selectedSeason][b] -
+            tracksBySeason[selectedSeason][a]
+        )
         .slice(0, 5)
     : [];
 
   return (
     <div>
-      <h3>Top 5 Músicas</h3>
-        {topTracks.map((track) => (
-          <p key={track} style={{
-             displayflex: "column",
-            flexwrap: "wrap"
+      {/* <h3>Top 5 Músicas</h3> */}
+      {topTracks.map((track) => (
+        <p
+          key={track}
+          style={{
+            displayflex: "column",
+            flexwrap: "wrap",
           }}
-          >{track}</p>
-        ))}
+        >
+          {track}
+        </p>
+      ))}
     </div>
   );
 }
@@ -95,23 +103,29 @@ function Top3ArtistasPorEstacao({ dados, selectedSeason }) {
 
   const topArtists = artistsBySeason[selectedSeason]
     ? Object.keys(artistsBySeason[selectedSeason])
-        .sort((a, b) => artistsBySeason[selectedSeason][b] - artistsBySeason[selectedSeason][a])
+        .sort(
+          (a, b) =>
+            artistsBySeason[selectedSeason][b] -
+            artistsBySeason[selectedSeason][a]
+        )
         .slice(0, 3)
     : [];
 
   return (
     <div>
-      <h3>Top 3 Artistas </h3>
-   
-        {topArtists.map((artist) => (
-          <p key={artist} style={{
+      {/* <h3>Top 3 Artistas </h3> */}
+
+      {topArtists.map((artist) => (
+        <p
+          key={artist}
+          style={{
             displayflex: "column",
-            flexwrap: "wrap"
-           
+            flexwrap: "wrap",
           }}
-          >{artist}</p>
-        ))}
-     
+        >
+          {artist}
+        </p>
+      ))}
     </div>
   );
 }
@@ -169,10 +183,16 @@ function Dashboard({ dados }) {
 
       <div className="content">
         {activeTab === "musicas" && (
-          <Top5MusicasPorEstacao dados={dados} selectedSeason={selectedSeason} />
+          <Top5MusicasPorEstacao
+            dados={dados}
+            selectedSeason={selectedSeason}
+          />
         )}
         {activeTab === "artistas" && (
-          <Top3ArtistasPorEstacao dados={dados} selectedSeason={selectedSeason} />
+          <Top3ArtistasPorEstacao
+            dados={dados}
+            selectedSeason={selectedSeason}
+          />
         )}
       </div>
     </div>
