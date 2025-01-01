@@ -10,7 +10,6 @@ import DiferentesMusicas from "./Components/DiferentesMusicas/DiferentesMusicas.
 import data from "./spotify_data_history.json";
 import NavBar from "./Components/appBar.jsx";
 import PercentagemPlaysArtista from "./Components/PercentagemPlaysArtista/PercentagemPlaysArtista.jsx";
-import data from "./spotify_data_history.json";
 import Top20MusicasArtista from "./Components/Top20MusicasArtista/Top20MusicasArtista.jsx";
 import PosicaoDoArtistaTop100 from "./Components/PosicaoDoArtistaTop100/PosicaoDoArtistaTop100.jsx";
 
@@ -46,7 +45,7 @@ function ByArtist() {
              <PosicaoDoArtistaTop100 dados={data} artist={params.artistName}/>
             </Grid>
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
-            C
+             <DiferentesMusicas dados={data} artist={params.artistName}/>
             </Grid>
             <Grid sx={{ border: "black solid 5px" }} size={{ xs: 12, md: 6 }}>
             <MinutosOuvidos dados={data} artist={params.artistName}/>

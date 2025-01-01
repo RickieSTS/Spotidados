@@ -1,25 +1,44 @@
 import React, { useState } from "react";
 
-function Top5MusicasPorEstacao({ dados, selectedSeason }) {
-  const getSeason = (date) => {
-    const month = new Date(date).getMonth();
-    if (month === 11 || month < 2) {
-      return "Inverno";
-    } else if (month >= 2 && month < 5) {
-      return "Primavera";
-    } else if (month >= 5 && month < 8) {
-      return "Verão";
-    } else {
-      return "Outono";
-    }
-  };
+function TabButton({ label, isActive, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        padding: "10px",
+        margin: "5px",
+        backgroundColor: isActive ? "#ccc" : "#fff",
+        border: "1px solid #000",
+        cursor: "pointer",
+      }}
+    >
+      {label}
+    </button>
+  );
+}
 
+const getSeason = (date) => {
+  const parsedDate = new Date(date);
+  if (isNaN(parsedDate)) {
+    console.warn("Data inválida encontrada:", date);
+    return null;
+  }
+  const month = parsedDate.getMonth();
+  if (month === 11 || month < 2) return "Inverno";
+  if (month >= 2 && month < 5) return "Primavera";
+  if (month >= 5 && month < 8) return "Verão";
+  return "Outono";
+};
+
+function Top5MusicasPorEstacao({ dados, selectedSeason }) {
   const validData = dados.filter(
     (item) => item.ts && item.master_metadata_track_name && item.ms_played
   );
 
   const tracksBySeason = validData.reduce((acc, item) => {
     const season = getSeason(item.ts);
+    if (!season) return acc;
+
     const track = item.master_metadata_track_name;
 
     if (!acc[season]) {
@@ -44,31 +63,26 @@ function Top5MusicasPorEstacao({ dados, selectedSeason }) {
   return (
     <div>
       <h3>Top 5 Músicas</h3>
-        {topTracks.map((track) => (
-          <p key={track} style={{
-             displayflex: "column",
-            flexwrap: "wrap"
-          }}
-          >{track}</p>
-        ))}
+      {topTracks.length === 0 ? (
+        <p>Nenhuma música encontrada para {selectedSeason}.</p>
+      ) : (
+        topTracks.map((track) => (
+          <p
+            key={track}
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            {track}
+          </p>
+        ))
+      )}
     </div>
   );
 }
 
 function Top3ArtistasPorEstacao({ dados, selectedSeason }) {
-  const getSeason = (date) => {
-    const month = new Date(date).getMonth();
-    if (month === 11 || month < 2) {
-      return "Inverno";
-    } else if (month >= 2 && month < 5) {
-      return "Primavera";
-    } else if (month >= 5 && month < 8) {
-      return "Verão";
-    } else {
-      return "Outono";
-    }
-  };
-
   const validData = dados.filter(
     (item) =>
       item.ts &&
@@ -78,6 +92,8 @@ function Top3ArtistasPorEstacao({ dados, selectedSeason }) {
 
   const artistsBySeason = validData.reduce((acc, item) => {
     const season = getSeason(item.ts);
+    if (!season) return acc;
+
     const artist = item.master_metadata_album_artist_name;
 
     if (!acc[season]) {
@@ -101,17 +117,22 @@ function Top3ArtistasPorEstacao({ dados, selectedSeason }) {
 
   return (
     <div>
-      <h3>Top 3 Artistas </h3>
-   
-        {topArtists.map((artist) => (
-          <p key={artist} style={{
-            displayflex: "column",
-            flexwrap: "wrap"
-           
-          }}
-          >{artist}</p>
-        ))}
-     
+      <h3>Top 3 Artistas</h3>
+      {topArtists.length === 0 ? (
+        <p>Nenhum artista encontrado para {selectedSeason}.</p>
+      ) : (
+        topArtists.map((artist) => (
+          <p
+            key={artist}
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            {artist}
+          </p>
+        ))
+      )}
     </div>
   );
 }
@@ -126,45 +147,26 @@ function Dashboard({ dados }) {
     <div>
       <div className="season-selector">
         {seasons.map((season) => (
-          <button
+          <TabButton
             key={season}
+            label={season}
+            isActive={selectedSeason === season}
             onClick={() => setSelectedSeason(season)}
-            style={{
-              padding: "10px",
-              margin: "5px",
-              backgroundColor: selectedSeason === season ? "#ccc" : "#fff",
-              border: "1px solid #000",
-              cursor: "pointer",
-            }}
-          >
-            {season}
-          </button>
+          />
         ))}
       </div>
 
       <div className="tabs">
-        <button
+        <TabButton
+          label="Top 5 Músicas"
+          isActive={activeTab === "musicas"}
           onClick={() => setActiveTab("musicas")}
-          style={{
-            padding: "10px",
-            backgroundColor: activeTab === "musicas" ? "#ccc" : "#fff",
-            border: "1px solid #000",
-            cursor: "pointer",
-          }}
-        >
-          Top 5 Músicas
-        </button>
-        <button
+        />
+        <TabButton
+          label="Top 3 Artistas"
+          isActive={activeTab === "artistas"}
           onClick={() => setActiveTab("artistas")}
-          style={{
-            padding: "10px",
-            backgroundColor: activeTab === "artistas" ? "#ccc" : "#fff",
-            border: "1px solid #000",
-            cursor: "pointer",
-          }}
-        >
-          Top 3 Artistas
-        </button>
+        />
       </div>
 
       <div className="content">

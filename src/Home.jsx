@@ -17,6 +17,8 @@ import MediaDiariaAOuvir from "./Components/MediaDiariaAOuvir/MediaDiariaAOuvir.
 import HoraDoDia from "./Components/HoraDoDia/HoraDoDia.jsx";
 import MaisOuvidaPorEstacao from "./Components/MaisOuvidaPorEstacao/MaisOuvidaPorEstacao.jsx";
 import Top3Top5PorEstacao from "./Components/Top3Top5PorEstacao/Top3Top5PorEstacao.jsx";
+// import Top5MusicasPorEstacao from "./Components/Top3Top5PorEstacao/Top5MusciasPorEstacao/Top5MusicasPorEstacao.jsx";
+// import Top3ArtistasPorEstacao from "./Components/Top3Top5PorEstacao/Top3ArtistasPorEstacao/Top3ArtistasPorEstacao.jsx";
 
 
 
