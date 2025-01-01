@@ -126,7 +126,7 @@ function TableTop20MusicasArtista({ dados, sortBy, artist }) {
   }, [sortBy, rows]);
 
   return (
-    <TableContainer
+    <TableContainer variant="spotiTable"
       component={Paper}
       sx={{
         height: "500px",
@@ -134,7 +134,7 @@ function TableTop20MusicasArtista({ dados, sortBy, artist }) {
         overflowX: "hidden",
       }}
     >
-      <Table sx={{ minWidth: 200 }} aria-label="Tabela Artistas por Plays">
+      <Table sx={{ minWidth: 200 }}  aria-label="Tabela Artistas por Plays">
         <TableHead>
           <TableRow>
             <StyledTableCell>Rank</StyledTableCell>

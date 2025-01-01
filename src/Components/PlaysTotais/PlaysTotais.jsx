@@ -12,10 +12,10 @@ function PlaysTotais({ dados }) {
   return (
     <Card variant="flufyRosa">
       <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Total de Plays
+        <Typography variant="h4" gutterBottom>
+          {playsTotais}
         </Typography>
-        <Typography variant="h5">Plays: {playsTotais}</Typography>
+        <Typography variant="h5">Músicas Ouvidas</Typography>
       </CardContent>
     </Card>
   );

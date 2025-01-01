@@ -25,8 +25,8 @@ function Home() {
     <ThemeProvider theme={spotidadosTheme}>
       <CssBaseline />
       <NavBar />
-      <Container maxWidth="xxl">
-        <Box sx={{ bgcolor: "#cfe8fc", m: 1 }}>
+      <Container sx={{ backgroundColor: spotidadosTheme.palette.spotiColors.cinzaFraco }} maxWidth="xxl">
+        <Box sx={{ p:1 }}>
           <Grid container columns={12} spacing={2}>
             <Grid item size={{ xs: 6, md: 6 }}>
               <ArtistasPorPlays dados={data} />
@@ -42,23 +42,23 @@ function Home() {
               </Grid>
             </Grid>
           </Grid>
-          <Grid container columns={18} spacing={2}>
+          <Grid sx={{ mt: 2}} container columns={18} spacing={2}>
             <Grid item size={{ xs: 18, md: 18 }} spacing={2}>
               <MusicasDiferentesOuvidasT dados={data} />
             </Grid>
             <Grid item size={{ xs: 18, md: 18 }}>
               <ArtistasDiferentesOuvidosT dados={data} />
             </Grid>
-            <Grid item size={{ xs: 8, md: 6 }}>
+            <Grid item size={{ xs: 9, md: 6 }}>
               <MusicaMaisOuvidaPorPlays dados={data} />
             </Grid>
-            <Grid item size={{ xs: 8, md: 6 }}>
+            <Grid item size={{ xs: 9, md: 6 }}>
               <MediaDiariaAOuvir dados={data} />
             </Grid>
-            <Grid item size={{ xs: 8, md: 6 }}>
+            <Grid item size={{ xs: 9, md: 6 }}>
               <HoraDoDia dados={data} />
             </Grid>
-            <Grid item size={{ xs: 8, md: 18 }}>
+            <Grid item size={{ xs: 9, md: 18 }}>
               <MaisOuvidaPorEstacao dados={data} />
             </Grid>
             <Grid item size={{ xs: 18, md: 18 }}>

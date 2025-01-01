@@ -16,20 +16,13 @@ function MinutosOuvidos({dados}) {
   return (
     <>
       {Object.entries(minutosPorArtista).map(([artista, minutos]) => (
-        <Card key={artista} sx={{
-          bgcolor: '#666666',
-          border: '2px solid #808080',
-          borderRadius: '15px',
-          color: 'white',
-          minWidth: 200,
-          margin: 2
-        }}>
+        <Card key={artista} variant='verdeMusga'>
           <CardContent>
-            <Typography variant="h5" gutterBottom>
-              {artista}
+            <Typography variant="h4" gutterBottom>
+               {minutos} minutos
             </Typography>
-            <Typography variant="h4">
-              Min: {minutos}
+            <Typography variant="h5">
+             no total a ouvir
             </Typography>
           </CardContent>
         </Card>

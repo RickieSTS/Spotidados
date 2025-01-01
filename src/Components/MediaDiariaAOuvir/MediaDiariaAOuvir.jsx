@@ -27,11 +27,12 @@ function MediaDiariaAOuvir({ dados }) {
   return (
     <Card variant='flufyRosa'>
       <CardContent>
- <Typography variant="h6" gutterBottom>
- Média diária a ouvir música:
- </Typography>
- <Typography variant="h5">
+ 
+ <Typography variant="h4">
  {media.toFixed(2)} horas
+ </Typography>
+ <Typography variant="h5" gutterBottom>
+ em média a ouvir música
  </Typography>
 </CardContent>
 </Card>
