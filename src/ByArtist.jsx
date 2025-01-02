@@ -10,13 +10,13 @@ import Grid from "@mui/material/Grid2";
 import MinutosOuvidos from "./Components/MinutosOuvidos/MinutosOuvidos.jsx";
 import NavBar from "./Components/appBar.jsx";
 import PercentagemPlaysArtista from "./Components/PercentagemPlaysArtista/PercentagemPlaysArtista.jsx";
-import data from "./spotify_data_history.json";
 import Top20MusicasArtista from "./Components/Top20MusicasArtista/Top20MusicasArtista.jsx";
 import PosicaoDoArtistaTop100 from "./Components/PosicaoDoArtistaTop100/PosicaoDoArtistaTop100.jsx";
 import PlaysTotalArtista from "./Components/PlaysTotalArtista/PlaysTotalArtista.jsx";
 import DiferentesMusicas from "./Components/DiferentesMusicas/DiferentesMusicas.jsx";
 import MaisOuveArtista from "./Components/MaisOuveArtista/MaisOuveArtista.jsx";
 import spotidadosTheme from "./theme.js";
+import data from "./spotify_data_history.json";
 
 
 function ByArtist() {
