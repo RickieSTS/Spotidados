@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import Inverno from "./seasons/inverno";
+import Primavera from "./seasons/primavera";
+import Verao from "./seasons/verao";
+import Outono from "./seasons/outono";
+import { Card } from "@mui/material";
 
 
 function CustomTabPanel(props) {
@@ -238,7 +243,7 @@ function Dashboard({ dados }) {
     //   </div>
     // </div>
 
-    <Box sx={{ width: '100%' }}>
+    <Card sx={{ width: '100%' }} variant="flufyRosa">
     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
       <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
         <Tab label="Inverno" {...a11yProps(0)} />
@@ -248,18 +253,18 @@ function Dashboard({ dados }) {
       </Tabs>
     </Box>
     <CustomTabPanel value={value} index={0}>
-      Item One
+      <Inverno dados={ dados } season={"Inverno"}/>
     </CustomTabPanel>
     <CustomTabPanel value={value} index={1}>
-      Item Two
+      <Primavera dados={ dados } season={"Primavera"}/>
     </CustomTabPanel>
     <CustomTabPanel value={value} index={2}>
-      Item Three
+      <Verao dados={ dados } season={"Verão"}/>
     </CustomTabPanel>
     <CustomTabPanel value={value} index={3}>
-      Item Three
+      <Outono dados={ dados } season={"Outono"}/>
     </CustomTabPanel>
-  </Box>
+  </Card>
   );
 }
 

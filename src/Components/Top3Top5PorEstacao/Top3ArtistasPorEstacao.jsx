@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Box, Paper } from "@mui/material";
 
-function Top3ArtistasPorEstacao({ dados }) {
+function Top3ArtistasPorEstacao({ dados, season }) {
   
   const getSeason = (date) => {
     const month = new Date(date).getMonth();
@@ -57,43 +58,47 @@ function Top3ArtistasPorEstacao({ dados }) {
  
   const [currentSeasonIndex, setCurrentSeasonIndex] = useState(0);
 
-  const handleSeasonChange = (index) => {
-    setCurrentSeasonIndex(index);
-  };
+ 
+  React.useMemo(() => {
+ 
+     switch(season){
+       default:
+       case "Inverno": 
+       setCurrentSeasonIndex(0);
+       break;
+       case "Primavera": 
+       setCurrentSeasonIndex(1);
+       break;
+       case "Verão": 
+       setCurrentSeasonIndex(2);
+       break;
+       case "Outono": 
+       setCurrentSeasonIndex(3);
+       break;
+     }
+ 
+     
+  },[season])
 
   const currentSeason = topArtistsBySeason[currentSeasonIndex];
 
   return (
-    <div>
-      <div className="buttons">
-        {seasons.map((season, index) => (
-          <button
-            key={season}
-            onClick={() => handleSeasonChange(index)}
-            style={{
-              margin: "5px",
-              padding: "10px",
-              backgroundColor: index === currentSeasonIndex ? "#ccc" : "#fff",
-              border: "1px solid #000",
-              cursor: "pointer",
-            }}
-          >
-            {season}
-          </button>
-        ))}
-      </div>
-      <div className="cards2-container">
+   
+      <Box className="cards2-container">
         {currentSeason && (
-          <>
-            <ul>
-              {currentSeason.artists.map((artist) => (
-                <li key={artist}>{artist}</li>
+          
+            <>
+              {currentSeason.artists.map((artist, index) => (
+                <>
+                <Paper sx={{m:2, p:1, backgroundColor:"transparent", color:"#fff", fontSize:"1.2rem"}} key={artist}>{index+1} - {artist}</Paper>
+                
+                </>
               ))}
-            </ul>
-          </>
+            </>
+          
         )}
-      </div>
-    </div>
+      </Box>
+   
   );
 }
 

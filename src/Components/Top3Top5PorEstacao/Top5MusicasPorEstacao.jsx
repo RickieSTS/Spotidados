@@ -1,8 +1,12 @@
 
 import React, { useState} from 'react';
+import { Box, Paper } from "@mui/material";
 
 
-function Top5MusicasPorEstacao({ dados }) {
+function Top5MusicasPorEstacao({ dados, season  }) {
+
+  
+  
  
   const getSeason = (date) => {
     const month = new Date(date).getMonth();
@@ -28,18 +32,18 @@ function Top5MusicasPorEstacao({ dados }) {
 
   
   const tracksBySeason = validData.reduce((acc, item) => {
-    const season = getSeason(item.ts);
+    const season1 = getSeason(item.ts);
     const track = item.master_metadata_track_name;
 
-    if (!acc[season]) {
-      acc[season] = {};
+    if (!acc[season1]) {
+      acc[season1] = {};
     }
 
-    if (!acc[season][track]) {
-      acc[season][track] = 0;
+    if (!acc[season1][track]) {
+      acc[season1][track] = 0;
     }
 
-    acc[season][track] += 1; 
+    acc[season1][track] += 1; 
 
     return acc;
   }, {});
@@ -48,54 +52,54 @@ function Top5MusicasPorEstacao({ dados }) {
   const seasons = ["Inverno", "Primavera", "Verão", "Outono"];
 
   
-  const topTracksBySeason = seasons.map((season) => {
-    const tracks = tracksBySeason[season] || {}; 
+  const topTracksBySeason = seasons.map((season1) => {
+    const tracks = tracksBySeason[season1] || {}; 
     const sortedTracks = Object.keys(tracks)
       .sort((a, b) => tracks[b] - tracks[a]) 
       .slice(0, 5); 
-    return { season, tracks: sortedTracks };
+    return { season1, tracks: sortedTracks };
   });
 
   
   const [currentSeasonIndex, setCurrentSeasonIndex] = useState(0);
 
-  const handleSeasonChange = (index) => {
-    setCurrentSeasonIndex(index);
-  };
+ React.useMemo(() => {
+
+    switch(season){
+      default:
+      case "Inverno": 
+      setCurrentSeasonIndex(0);
+      break;
+      case "Primavera": 
+      setCurrentSeasonIndex(1);
+      break;
+      case "Verão": 
+      setCurrentSeasonIndex(2);
+      break;
+      case "Outono": 
+      setCurrentSeasonIndex(3);
+      break;
+    }
+
+    
+ },[season])
 
   const currentSeason = topTracksBySeason[currentSeasonIndex];
 
   return (
-    <div>
-      <div className="buttons">
-        {seasons.map((season, index) => (
-          <button
-            key={season}
-            onClick={() => handleSeasonChange(index)}
-            style={{
-              margin: "5px",
-              padding: "10px",
-              backgroundColor: index === currentSeasonIndex ? "#ccc" : "#fff",
-              border: "1px solid #000",
-              cursor: "pointer",
-            }}
-          >
-            {season}
-          </button>
-        ))}
-      </div>
-      <div className="cards2-container">
+    
+      <Box className="cards2-container">
         {currentSeason && (
           <>
-            <ul>
-              {currentSeason.tracks.map((track) => (
-                <li key={track}>{track}</li>
+            
+              {currentSeason.tracks.map((track, index) => (
+                <Paper sx={{m:2, p:1, backgroundColor:"transparent", color:"#fff", fontSize:"1.2rem"}} key={track}>{index+1} - {track}</Paper>
               ))}
-            </ul>
+            
           </>
         )}
-      </div>
-    </div>
+      </Box>
+    
   );
 }
 
