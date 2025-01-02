@@ -16,6 +16,7 @@ import PlaysTotalArtista from "./Components/PlaysTotalArtista/PlaysTotalArtista.
 import DiferentesMusicas from "./Components/DiferentesMusicas/DiferentesMusicas.jsx";
 import MaisOuveArtista from "./Components/MaisOuveArtista/MaisOuveArtista.jsx";
 import spotidadosTheme from "./theme.js";
+import data from "./spotify_data_history.json";
 
 
 function ByArtist() {

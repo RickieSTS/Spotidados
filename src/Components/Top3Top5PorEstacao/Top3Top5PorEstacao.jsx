@@ -1,4 +1,40 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
+
+
+function CustomTabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </div>
+  );
+}
+
+CustomTabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+
 
 function TabButton({ label, isActive, onClick }) {
   return (
@@ -87,6 +123,9 @@ function Top5MusicasPorEstacao({ dados, selectedSeason }) {
 }
 
 function Top3ArtistasPorEstacao({ dados, selectedSeason }) {
+
+  
+
   const validData = dados.filter(
     (item) =>
       item.ts &&
@@ -149,49 +188,78 @@ function Dashboard({ dados }) {
   const [activeTab, setActiveTab] = useState("musicas");
   const [selectedSeason, setSelectedSeason] = useState("Inverno");
 
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   const seasons = ["Inverno", "Primavera", "Verão", "Outono"];
 
   return (
-    <div>
-      <div className="season-selector">
-        {seasons.map((season) => (
-          <TabButton
-            key={season}
-            label={season}
-            isActive={selectedSeason === season}
-            onClick={() => setSelectedSeason(season)}
-          />
-        ))}
-      </div>
+    // <div>
+    //   <div className="season-selector">
+    //     {seasons.map((season) => (
+    //       <TabButton
+    //         key={season}
+    //         label={season}
+    //         isActive={selectedSeason === season}
+    //         onClick={() => setSelectedSeason(season)}
+    //       />
+    //     ))}
+    //   </div>
 
-      <div className="tabs">
-        <TabButton
-          label="Top 5 Músicas"
-          isActive={activeTab === "musicas"}
-          onClick={() => setActiveTab("musicas")}
-        />
-        <TabButton
-          label="Top 3 Artistas"
-          isActive={activeTab === "artistas"}
-          onClick={() => setActiveTab("artistas")}
-        />
-      </div>
+    //   <div className="tabs">
+    //     <TabButton
+    //       label="Top 5 Músicas"
+    //       isActive={activeTab === "musicas"}
+    //       onClick={() => setActiveTab("musicas")}
+    //     />
+    //     <TabButton
+    //       label="Top 3 Artistas"
+    //       isActive={activeTab === "artistas"}
+    //       onClick={() => setActiveTab("artistas")}
+    //     />
+    //   </div>
 
-      <div className="content">
-        {activeTab === "musicas" && (
-          <Top5MusicasPorEstacao
-            dados={dados}
-            selectedSeason={selectedSeason}
-          />
-        )}
-        {activeTab === "artistas" && (
-          <Top3ArtistasPorEstacao
-            dados={dados}
-            selectedSeason={selectedSeason}
-          />
-        )}
-      </div>
-    </div>
+    //   <div className="content">
+    //     {activeTab === "musicas" && (
+    //       <Top5MusicasPorEstacao
+    //         dados={dados}
+    //         selectedSeason={selectedSeason}
+    //       />
+    //     )}
+    //     {activeTab === "artistas" && (
+    //       <Top3ArtistasPorEstacao
+    //         dados={dados}
+    //         selectedSeason={selectedSeason}
+    //       />
+    //     )}
+    //   </div>
+    // </div>
+
+    <Box sx={{ width: '100%' }}>
+    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+      <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+        <Tab label="Inverno" {...a11yProps(0)} />
+        <Tab label="Primavera" {...a11yProps(1)} />
+        <Tab label="Verão" {...a11yProps(2)} />
+        <Tab label="Outono" {...a11yProps(3)} />
+      </Tabs>
+    </Box>
+    <CustomTabPanel value={value} index={0}>
+      Item One
+    </CustomTabPanel>
+    <CustomTabPanel value={value} index={1}>
+      Item Two
+    </CustomTabPanel>
+    <CustomTabPanel value={value} index={2}>
+      Item Three
+    </CustomTabPanel>
+    <CustomTabPanel value={value} index={3}>
+      Item Three
+    </CustomTabPanel>
+  </Box>
   );
 }
 
